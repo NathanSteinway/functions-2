@@ -130,9 +130,11 @@ function outerFn(uniqArr){
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
 
-function each(names, callback){
-  for (let i = 0; i < names.length; i++){
-    callback(names[i], names.indexOf(names[i]))
+let arr = ['Malzahar', 'Veigar', 'Twitch', 'Tristana', 'Malzahar', 'Twitch']
+
+function each(arr, callback){
+  for (let i = 0; i < arr.length; i++){
+    callback(arr[i], [i])
   }
 }
 
@@ -143,7 +145,7 @@ function each(names, callback){
   'The item at index [INDEXPARAM] is [ITEMPARAM].'
 */
 
-each(names, outerFun)
+each(arr, outerFun)
 
 function outerFun(item, index) {
   console.log('The item at index ' + index + ' is ' + item + '.')
